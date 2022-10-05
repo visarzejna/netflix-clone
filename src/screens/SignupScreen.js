@@ -23,17 +23,23 @@ function SignupScreen() {
   const signIn = (e) => {
     e.preventDefault();
 
-    auth.signInWithEmailAndPassword(
+    auth
+      .signInWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
-    ).then(() => {})
-    .catch((error)=>{
-        alert(error.message)
-    })
+      )
+      .then(() => {})
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
     <div className="signupScreen">
+      <p className="login__disclaimer">
+        To check out the app, enter all fields and press Sign Up Now
+      </p>
+
       <form>
         <h1>Sign In</h1>
         <input ref={emailRef} type="email" placeholder="Email" />
